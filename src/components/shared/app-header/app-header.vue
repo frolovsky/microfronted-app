@@ -96,6 +96,10 @@ export default class AppHeader extends Vue {
 
   &__smart-feed {
     margin-left: auto;
+    height: 50px;
+    width: 240px;
+    border-radius: 10px;
+    background-color: #fff;
   }
 }
 </style>

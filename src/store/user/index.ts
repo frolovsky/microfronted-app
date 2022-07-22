@@ -8,9 +8,10 @@ import { getters } from '@/store/user/getters';
 const state: IUserState = {
   userData: {
     id: '1',
-    username: 's',
+    username: 'Vagner Love',
     email: 'ap@ma.cr',
-    avatar: '',
+    avatar:
+      'https://upload.wikimedia.org/wikipedia/commons/5/54/VagnerLove.jpg',
   },
 };
 

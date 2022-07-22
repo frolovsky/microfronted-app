@@ -6,7 +6,12 @@ import { actions } from '@/store/user/actions';
 import { getters } from '@/store/user/getters';
 
 const state: IUserState = {
-  userData: null,
+  userData: {
+    id: '1',
+    username: 's',
+    email: 'ap@ma.cr',
+    avatar: '',
+  },
 };
 
 export default {

@@ -3,11 +3,11 @@
   <div class="main">
     <app-header />
 
-    <div class="auth__content">
+    <div class="main__content">
       <router-view />
     </div>
 
-    <auth-footer />
+    <app-footer />
   </div>
 </template>
 

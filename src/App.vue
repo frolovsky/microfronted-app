@@ -1,16 +1,35 @@
 <template>
   <div id="app">
-    <router-view />
+    <component :is="layout">
+      <router-view />
+    </component>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
+import { IUser } from '@/store/user/types';
+
+const AuthLayout = () =>
+  import(/* webpackChunkName: 'auth-layout' */ '@/layouts/auth-layout.vue');
+const MainLayout = () =>
+  import(/* webpackChunkName: 'main-layout' */ '@/layouts/main-layout.vue');
 
 @Component({
   name: 'App',
+  components: {
+    AuthLayout,
+    MainLayout,
+  },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  @Getter('userData', { namespace: 'user' }) readonly userData!: IUser | null;
+
+  get layout() {
+    return this.userData ? MainLayout : AuthLayout;
+  }
+}
 </script>
 
 <style lang="scss">
